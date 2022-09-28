@@ -1,0 +1,25 @@
+"https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key=905681146fae0fd61f4fb6eac369457c&artist=Lorde&album=melodrama&format=json"
+// for finding last.fm album data 
+// change album=melodrama to album=whatever album you want
+// change artist=Lorde to artist=whatever artist you want 
+// change album= to track= to change it to the song data
+"https://ws.audioscrobbler.com/2.0/?method=artist.getInfo&api_key=905681146fae0fd61f4fb6eac369457c&artist=Lorde&format=json"
+// for finding artist data on last.fm
+// again just change the artist=Lorde to something else
+
+"https://musicbrainz.org/ws/2/artist/8e494408-8620-4c6a-82c2-c2ca4a1e4f12?fmt=json"
+// for finding musicbrainz metadata
+// change the long string of numbers (mbid) to another artists mbid to change which artist your searching for
+// change /artist to different fields for querying other things eg: (area, artist, event, genre, instrument, label, place, recording, release, release-group, series, work, url)
+
+"http://musicbrainz.org/ws/2/artist/8e494408-8620-4c6a-82c2-c2ca4a1e4f12?inc=release-groups&fmt=json"
+// for finding all albums/singles/eps that a specfic artist made
+// again just replace the mbid with the artsit youre looking for
+
+"https://musicbrainz.org/ws/2/release/db051000-310e-4978-912a-974580abceb1?inc=recordings&fmt=json"
+// musicbrainz
+// get every song on an album
+// replace the number with the mbid of a release from an artist
+
+"https://musicbrainz.org/doc/MusicBrainz_API"
+// some docs for the musicbrainz api
