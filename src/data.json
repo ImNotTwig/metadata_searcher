@@ -1,16 +1,468 @@
 {
-    "Lorde": {
-      "Melodrama": {
-        "Green Light": {},
-        "Sober": {},
-        "Homemade Dynamite": {},
-        "The Louvre": {},
-        "Liability": {},
-        "Hard Feelings/Loveless": {},
-        "Writer in the Dark": {},
-        "Supercut": {},
-        "Liability (Reprise)": {},
-        "Perfect Places": {}
-      }
-    }
+  "Lorde": {
+      "mbid": "8e494408-8620-4c6a-82c2-c2ca4a1e4f12",
+      "artist_type": "Person",
+      "releases": [
+          {
+              "Pure Heroine": {
+                  "mbid": "ffbe3099-9d1d-4bf2-b59d-c8e9aa93926a",
+                  "tracks": [
+                      {
+                          "name": "Tennis Court",
+                          "mbid": "0a53a2de-e0fb-4574-bb81-a965d361fd65",
+                          "number": 1
+                      },
+                      {
+                          "name": "400 Lux",
+                          "mbid": "74b87038-96dd-4b96-94bc-587bf35cead9",
+                          "number": 2
+                      },
+                      {
+                          "name": "Royals",
+                          "mbid": "3648ba4e-d647-4b34-9d75-45f5f54841a1",
+                          "number": 3
+                      },
+                      {
+                          "name": "Ribs",
+                          "mbid": "c87e4a52-b743-41a8-be44-6fdc3b6e59ab",
+                          "number": 4
+                      },
+                      {
+                          "name": "Buzzcut Season",
+                          "mbid": "664b375e-4cd3-49b4-8dd8-1e274817cffb",
+                          "number": 5
+                      },
+                      {
+                          "name": "Team",
+                          "mbid": "434ebb4f-1f1d-49ee-b6db-1034c171308e",
+                          "number": 6
+                      },
+                      {
+                          "name": "Glory and Gore",
+                          "mbid": "576c7113-8e4c-4064-894a-8100daaa4e13",
+                          "number": 7
+                      },
+                      {
+                          "name": "Still Sane",
+                          "mbid": "00782ad3-2c41-4323-910f-8b88326db82c",
+                          "number": 8
+                      },
+                      {
+                          "name": "White Teeth Teens",
+                          "mbid": "425dd8de-e1c4-4131-ae1c-63c809095f87",
+                          "number": 9
+                      },
+                      {
+                          "name": "A World Alone",
+                          "mbid": "e905bc2a-c00d-4672-a1c5-090c28090811",
+                          "number": 10
+                      }
+                  ]
+              }
+          },
+          {
+              "Melodrama": {
+                  "mbid": "85e66fed-b2a3-4d48-9cc4-feff50088f33",
+                  "tracks": [
+                      {
+                          "name": "Green Light",
+                          "mbid": "7bcd2f77-0e1c-4b7e-894b-8e1a7a65ff38",
+                          "number": 1
+                      },
+                      {
+                          "name": "Sober",
+                          "mbid": "18864fc8-ff0f-4132-b250-89c263514cd8",
+                          "number": 2
+                      },
+                      {
+                          "name": "Homemade Dynamite",
+                          "mbid": "6b0a1644-42d5-4816-ab27-2c26acf44927",
+                          "number": 3
+                      },
+                      {
+                          "name": "The Louvre",
+                          "mbid": "73819387-4ec1-4d85-8ea4-6535581a9515",
+                          "number": 4
+                      },
+                      {
+                          "name": "Liability",
+                          "mbid": "a1ed4ac3-7564-4aa3-880c-f254353913d4",
+                          "number": 5
+                      },
+                      {
+                          "name": "Hard Feelings/Loveless",
+                          "mbid": "30f14e65-8321-47d9-a666-94b1ab579b28",
+                          "number": 6
+                      },
+                      {
+                          "name": "Sober II (Melodrama)",
+                          "mbid": "9b69a776-b9d9-4b4f-8d80-ac6c07a3d0b0",
+                          "number": 7
+                      },
+                      {
+                          "name": "Writer in the Dark",
+                          "mbid": "803859b2-5e2d-4c35-b4b6-126a275d8ed7",
+                          "number": 8
+                      },
+                      {
+                          "name": "Supercut",
+                          "mbid": "4958e7cc-518f-4c83-b311-ca97fe43e694",
+                          "number": 9
+                      },
+                      {
+                          "name": "Liability (reprise)",
+                          "mbid": "30b3a7ee-cb55-43d2-9a46-111a7f747835",
+                          "number": 10
+                      },
+                      {
+                          "name": "Perfect Places",
+                          "mbid": "70685db9-29b6-4039-976e-db196614a9f1",
+                          "number": 11
+                      }
+                  ]
+              }
+          },
+          {
+              "Solar Power": {
+                  "mbid": "607b4af2-1051-447d-b1ab-7fbb730f7bf8",
+                  "tracks": [
+                      {
+                          "name": "The Path",
+                          "mbid": "f6dd249e-e9b6-428b-8836-e516c6d3f2c4",
+                          "number": 1
+                      },
+                      {
+                          "name": "Solar Power",
+                          "mbid": "ff33206b-1910-4e69-ab35-b71fa6095f14",
+                          "number": 2
+                      },
+                      {
+                          "name": "California",
+                          "mbid": "b06d2fa0-7aa7-4ada-8646-08863057c183",
+                          "number": 3
+                      },
+                      {
+                          "name": "Stoned at the Nail Salon",
+                          "mbid": "bc682037-e782-4ed1-82b8-01cd111b33ff",
+                          "number": 4
+                      },
+                      {
+                          "name": "Fallen Fruit",
+                          "mbid": "84193abc-05fa-4865-980d-9a01037fc1a8",
+                          "number": 5
+                      },
+                      {
+                          "name": "Secrets From a Girl (Who’s Seen It All)",
+                          "mbid": "ed5258f6-caf0-4422-a6f7-c7ba7b775c59",
+                          "number": 6
+                      },
+                      {
+                          "name": "The Man With the Axe",
+                          "mbid": "117e170f-b0c2-4635-908a-363ade9584d4",
+                          "number": 7
+                      },
+                      {
+                          "name": "Dominoes",
+                          "mbid": "c6ea6ce3-375d-4d4a-8a24-d936f5440305",
+                          "number": 8
+                      },
+                      {
+                          "name": "Big Star",
+                          "mbid": "dac8da08-51d0-475d-b468-e3766709713a",
+                          "number": 9
+                      },
+                      {
+                          "name": "Leader of a New Regime",
+                          "mbid": "b4d05e54-f806-44b6-b1cb-18372fd5869e",
+                          "number": 10
+                      },
+                      {
+                          "name": "Mood Ring",
+                          "mbid": "f06ec495-7b6e-4545-959b-14603c2460d9",
+                          "number": 11
+                      },
+                      {
+                          "name": "Oceanic Feeling",
+                          "mbid": "77e19685-5e7c-4570-9d07-16b1bec41550",
+                          "number": 12
+                      }
+                  ]
+              }
+          },
+          {
+              "Royals": {
+                  "mbid": "9ad95ade-41fc-45a1-8249-08e779de0cbc",
+                  "tracks": [
+                      {
+                          "name": "Royals",
+                          "mbid": "a71a75f7-7b28-48b1-9777-d5826de555ce",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Tennis Court": {
+                  "mbid": "c62cfc44-bf55-4875-9986-7bcd2ecd8743",
+                  "tracks": [
+                      {
+                          "name": "Tennis Court",
+                          "mbid": "280dc60a-e7da-45af-8ea5-a49d7d04e32c",
+                          "number": 1
+                      },
+                      {
+                          "name": "Swingin’ Party",
+                          "mbid": "db9ea32c-258c-4df3-9ff5-b938d5930354",
+                          "number": 2
+                      }
+                  ]
+              }
+          },
+          {
+              "Team": {
+                  "mbid": "d98ed952-3545-4063-ab26-1573b300b543",
+                  "tracks": [
+                      {
+                          "name": "Team",
+                          "mbid": "891cfbf2-3e3d-46c9-8737-35083cb5903e",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Buzzcut Season": {
+                  "mbid": "5a6c14d4-2ea5-451b-9921-f24a35e37c19",
+                  "tracks": [
+                      {
+                          "name": "Buzzcut Season",
+                          "mbid": "5d1dd691-e455-4d64-a4ac-b066bf6e29e1",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Ribs": {
+                  "mbid": "9e0fa603-2996-4ed1-806e-cfc88a6df4cf",
+                  "tracks": [
+                      {
+                          "name": "Ribs",
+                          "mbid": "1e3aae25-8f6f-4d03-9b5b-645d359e9a06",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "No Better": {
+                  "mbid": "486442a9-e117-47fe-b695-618f79e24016",
+                  "tracks": [
+                      {
+                          "name": "No Better",
+                          "mbid": "80122d30-f248-4e7c-801b-615ed4cc25ae",
+                          "number": 1
+                      },
+                      {
+                          "name": "Royals",
+                          "mbid": "f097a90b-8848-43e2-a38d-548bc645d42d",
+                          "number": 2
+                      }
+                  ]
+              }
+          },
+          {
+              "Glory and Gore": {
+                  "mbid": "aa4fd10c-aae2-4de3-9d02-5bd99b3c5e18",
+                  "tracks": [
+                      {
+                          "name": "Glory and Gore",
+                          "mbid": "3408a98a-209b-4fc9-bee2-3bb6544de731",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Meltdown": {
+                  "mbid": "67385b34-a7d8-4fc7-b921-6e842a074c3e",
+                  "tracks": [
+                      {
+                          "name": "Meltdown",
+                          "mbid": "57f33696-2e12-42ac-8193-3b14a7212539",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Magnets (SG Lewis remix)": {
+                  "mbid": "6f58cc26-d903-4813-9378-ea53056bf01a",
+                  "tracks": [
+                      {
+                          "name": "Magnets (SG Lewis remix)",
+                          "mbid": "701dad96-bfba-4771-b975-f5467901a6c9",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Green Light": {
+                  "mbid": "8bd5847c-9465-46ff-87cf-163149c40980",
+                  "tracks": [
+                      {
+                          "name": "Green Light",
+                          "mbid": "f78732ef-b137-4d70-8686-7b99378bcc23",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Liability": {
+                  "mbid": "efa29180-b9f4-47e6-b326-47bddc2ceeb8",
+                  "tracks": [
+                      {
+                          "name": "Liability",
+                          "mbid": "e59cb031-1293-4c14-899b-d31a1f532099",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Perfect Places": {
+                  "mbid": "eec92d50-d5ee-4483-a2d8-a0e7cf520027",
+                  "tracks": [
+                      {
+                          "name": "Perfect Places",
+                          "mbid": "0420a745-46fe-4dc3-a877-f96ee1912d69",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Sober": {
+                  "mbid": "c6e46e62-2908-41b7-9ea2-87798292b16b",
+                  "tracks": [
+                      {
+                          "name": "Sober",
+                          "mbid": "77c892f2-0639-4307-b6f3-a0140bb31cbf",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Sway": {
+                  "mbid": "d7c87efa-8252-4cb5-9389-c649643786d6",
+                  "tracks": [
+                      {
+                          "name": "Sway",
+                          "mbid": "13429b5e-df36-4bfc-9a6a-334ab90b9966",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Solar Power": {
+                  "mbid": "c03d7de6-644f-42e3-abde-89f0b8cd8065",
+                  "tracks": [
+                      {
+                          "name": "Solar Power",
+                          "mbid": "394786d2-f798-4008-8d15-46f8d3b8a5b6",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Stoned at the Nail Salon": {
+                  "mbid": "56a08958-c225-4abb-b389-a20a19aa70c1",
+                  "tracks": [
+                      {
+                          "name": "Stoned at the Nail Salon",
+                          "mbid": "70a5129f-2a64-4778-aa80-38f55de959e8",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Mood Ring": {
+                  "mbid": "5cd6305d-0082-4630-be7a-74e3ca25bc86",
+                  "tracks": [
+                      {
+                          "name": "Mood Ring",
+                          "mbid": "068e2177-7e46-40d3-b3a6-752716950161",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Helen of Troy": {
+                  "mbid": "ce57ed40-efbb-43c7-92c6-0f0bf36a6cff",
+                  "tracks": [
+                      {
+                          "name": "Helen of Troy",
+                          "mbid": "6b46673d-8215-448b-8b3d-d94c59da663b",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Hold No Grudge": {
+                  "mbid": "f8c0c4b7-1e67-497b-abff-0cbbc1b4bf92",
+                  "tracks": [
+                      {
+                          "name": "Hold No Grudge",
+                          "mbid": "2fcaa241-a02e-4d0e-a226-911eba1f1a04",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Yellow Flicker Beat": {
+                  "mbid": "36bfad27-d3fb-44a8-9832-f0cf3f9c3068",
+                  "tracks": [
+                      {
+                          "name": "Yellow Flicker Beat",
+                          "mbid": "777038dc-369a-4bf6-aef4-99f98afa65f5",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Flicker (Kanye West rework) (from The Hunger Games: Mockingjay Part 1)": {
+                  "mbid": "852d7d16-c2a9-4cfc-afff-e2ccce6f6929",
+                  "tracks": [
+                      {
+                          "name": "Flicker (Kanye West rework)",
+                          "mbid": "6a5a0a5c-ac1a-454e-95aa-f808d214e938",
+                          "number": 1
+                      }
+                  ]
+              }
+          },
+          {
+              "Royals / White Noise (live from the BRITs)": {
+                  "mbid": "529a45e4-4283-46c2-9055-5c39c84f6143",
+                  "tracks": [
+                      {
+                          "name": "Royals / White Noise (live from the BRITs)",
+                          "mbid": "41c3e243-53e4-47fb-9658-aba0870474d7",
+                          "number": 1
+                      }
+                  ]
+              }
+          }
+      ]
   }
+}
