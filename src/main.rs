@@ -1,20 +1,22 @@
-extern crate musicbrainz_rs;
 use std::collections::HashMap;
+use std::fs::File;
+use std::io::prelude::*;
 
+extern crate musicbrainz_rs;
 use musicbrainz_rs::{entity::{artist::*, release::Release, release_group::ReleaseGroup}, prelude::*};
 
 use lastfm_rs::Lastfm;
 
 use serde::{Serialize, Deserialize};
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct SongData {
     name: String, //name of the song
     mbid: String, //musicbrainz id
     number: i32   //tracklist number
 }
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct ReleaseData {
     name: String, //name of the release
     mbid: String, //musicbrainz id
@@ -24,16 +26,7 @@ pub struct ReleaseData {
                             //]
 }
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
-pub struct ReleaseDataWithoutName {
-    mbid: String, //musicbrainz id
-    tracks: Vec<SongData>   //[
-                            //{name, mbid, number}, 
-                            //{name, mbid, number}
-                            //]
-}
-
-#[derive(Serialize, Deserialize, Debug, Clone)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct ArtistData {
     name: String, //name of the artist
     mbid: String, //musicbrainz id
@@ -52,24 +45,25 @@ pub struct ArtistData {
                             //] 
 }
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
+
+#[derive(Serialize, Deserialize, Debug)]
 pub struct ArtistDataWithoutName {
-    mbid: String,
+    mbid: String, //musicbrainz id
     artist_type: String,
-    releases: Vec<HashMap<String, ReleaseDataWithoutName>>
+    releases: Vec<ReleaseData>
 }
 
 fn main() {
 
 //////////////////getting the artist mbid and name//////////////////////////////////////////////
     
-    let artist_name = "Lorde".to_string();
-    let artist_mbid = get_artist_mbid();
+    let artist_name = "Ghost".to_string();
+    let artist_mbid = get_artist_mbid(&artist_name);
 
 //////////////////getting info about the artist from musicbrainz////////////////////////////////
 
     let artist_info = Artist::fetch()
-        .id(&artist_mbid)
+        .id(&artist_mbid.as_ref().unwrap().to_string())
         .with_release_groups()
         .execute()
         .unwrap();
@@ -118,50 +112,54 @@ fn main() {
         }
         
 
-        let release_data_without_name = ReleaseDataWithoutName {
+        let release_data = ReleaseData {
+            name: release.title.clone(),
             mbid: mbid,
             tracks: tracks,
         };
 
-        let mut dict = HashMap::new();
-        dict.insert(release.title.clone(),release_data_without_name);
-        artist_releases.push(dict)
+        artist_releases.push(release_data)
 
     }
-    
-    let artist_data_without_name = ArtistDataWithoutName {
-        mbid: artist_mbid,
+    let artist_data = ArtistDataWithoutName {
+        mbid: artist_mbid.as_ref().unwrap().to_string(),
         artist_type: artist_type,
         releases: artist_releases,
     };
 
-    //"Lorde": ["mbid":mbid, "type":type, "releases":["name":release, "name":release]
+//////////////////Convertin the ArtistData to a Json and uploading it to a file/////////////////
+
     let mut dict = HashMap::new();
 
-    dict.insert(artist_name, artist_data_without_name);
+    dict.insert(artist_name, artist_data);
 
     let buf = Vec::new();
     let formatter = serde_json::ser::PrettyFormatter::with_indent(b"    ");
     let mut ser = serde_json::Serializer::with_formatter(buf, formatter);
     dict.serialize(&mut ser).unwrap();
-    println!("{}", String::from_utf8(ser.into_inner()).unwrap());
 
+    let mut file = File::create("./temp.json").unwrap();
 
-    
-
+    write!(file, "{}", String::from_utf8(ser.into_inner()).unwrap()).unwrap();
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////function to get the artists mbid//////////////////////////////////////////////
+
+fn get_artist_mbid(artist_name: &String) -> Option<String> {
+    
+    let query = ArtistSearchQuery::query_builder()
+        .artist(artist_name)
+        .build();
+
+    let query_result = Artist::search(query).execute().unwrap();
+
+    //println!("{:?}",query_result);
+
+    let artist_mbid = &query_result.entities[0].id;
+
+    return Some(artist_mbid.to_string())
 }
 
-
-
-
-
-#[tokio::main]
-async fn get_artist_mbid() -> String {
-    let client = Lastfm::new("905681146fae0fd61f4fb6eac369457c");
-
-    let lastfm_artist = client.artist.get_info("Lorde").await.unwrap();
-    let artist_mbid = lastfm_artist.artist.mbid.unwrap();
-    return artist_mbid
-}
+////////////////////////////////////////////////////////////////////////////////////////////////
