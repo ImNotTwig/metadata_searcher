@@ -5,7 +5,6 @@ use std::io::prelude::*;
 extern crate musicbrainz_rs;
 use musicbrainz_rs::{entity::{artist::*, release::Release, release_group::ReleaseGroup}, prelude::*};
 
-use lastfm_rs::Lastfm;
 
 use serde::{Serialize, Deserialize};
 

@@ -7,7 +7,6 @@ edition = "2021"
 
 [dependencies]
 musicbrainz_rs = { path="./src/lib/musicbrainz_rs-main" }
-lastfm-rs = { path = "./src/lib/lastfm-rs-master" }
 tokio = { version = "*", features = ["full"] }
 serde = { version = "*", features = ["derive"] }
 serde_json = "*"
