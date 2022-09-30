@@ -5,58 +5,41 @@ use std::io::prelude::*;
 extern crate musicbrainz_rs;
 use musicbrainz_rs::{entity::{artist::*, release::Release, release_group::ReleaseGroup}, prelude::*};
 
-
 use serde::{Serialize, Deserialize};
+
+////////////////////////////////////////////////////////////////////////////////////////////////
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct SongData {
-    name: String, //name of the song
     mbid: String, //musicbrainz id
     number: i32   //tracklist number
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+
 #[derive(Serialize, Deserialize, Debug)]
 pub struct ReleaseData {
-    name: String, //name of the release
     mbid: String, //musicbrainz id
-    tracks: Vec<SongData>   //[
-                            //{name, mbid, number}, 
-                            //{name, mbid, number}
-                            //]
+    type_of_release: String,
+    tracks: HashMap<String, SongData>
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct ArtistData {
-    name: String, //name of the artist
     mbid: String, //musicbrainz id
     artist_type: String,
-    releases: Vec<ReleaseData> //[
-                            //{name, mbid,[                     //list of ReleaseData 
-                                        //{name, mbid, number}, 
-                                        //{name, mbid, number}
-                                        //]
-                                        //},
-                            //{name, mbid,[                     //list of ReleaseData
-                                        //{name, mbid, number}, 
-                                        //{name, mbid, number}
-                                        //]
-                                        //}}
-                            //] 
+    releases:  HashMap<String, ReleaseData>
 }
 
-
-#[derive(Serialize, Deserialize, Debug)]
-pub struct ArtistDataWithoutName {
-    mbid: String, //musicbrainz id
-    artist_type: String,
-    releases: Vec<ReleaseData>
-}
+////////////////////////////////////////////////////////////////////////////////////////////////
 
 fn main() {
 
 //////////////////getting the artist mbid and name//////////////////////////////////////////////
     
-    let artist_name = "Ghost".to_string();
+    let artist_name = "Rare Americans".to_string();
     let artist_mbid = get_artist_mbid(&artist_name);
 
 //////////////////getting info about the artist from musicbrainz////////////////////////////////
@@ -66,17 +49,16 @@ fn main() {
         .with_release_groups()
         .execute()
         .unwrap();
-    //println!("{:?}", artist_info);
         
 //////////////////setting the artist type///////////////////////////////////////////////////////
  
-    let artist_type = artist_info.artist_type.unwrap().to_string();
+    let artist_type = artist_info.artist_type.as_ref().unwrap().to_string();
 
 //////////////////getting mbids for every release group/////////////////////////////////////////
  
     let mut release_group_mbids = vec![];
-    for release in artist_info.release_groups.unwrap() {
-        release_group_mbids.push(release.id);
+    for release_group in artist_info.release_groups.unwrap() {
+        release_group_mbids.push(release_group.id);
     }
  
 //////////////////getting mbids for every release///////////////////////////////////////////////
@@ -89,44 +71,47 @@ fn main() {
             .execute()
             .unwrap();
         
-        release_mbids.push(release_group_info.releases.as_ref().unwrap()[0].id.clone())
-        //println!("{:?}, {:?}, {:?}", release_info.title, track.recording.title, track.recording.id);
+        release_mbids.push((release_group_info.releases.as_ref().unwrap()[0].id.clone(), 
+                            release_group_info.primary_type.as_ref().unwrap().to_string()))
+
     }
 
 //////////////////getting data from the releases to make ReleaseData////////////////////////////
     
-    let mut artist_releases = vec![];
+    //let mut artist_releases = vec![];
+    let mut releases_hashmap = HashMap::new();
     for mbid in release_mbids { //for release in releases
-        let mut tracks = vec![];
+        let mut song_hashmap = HashMap::new();
         let release = &mut Release::fetch()
-            .id(&mbid)
+            .id(&mbid.0)
             .with_recordings()
             .execute()
             .unwrap();
 
-
-
         for song in release.media.as_ref().unwrap()[0].tracks.as_ref().unwrap() { //for every track make a SongData struct
-            tracks.push(SongData{ name:song.title.clone(), mbid:song.id.clone(), number:song.position as i32})
-        }
+            let song_data = SongData{ mbid:song.id.clone(), number:song.position as i32};
+            song_hashmap.insert(song.title.clone(), song_data);
         
-
+        }
+    
         let release_data = ReleaseData {
-            name: release.title.clone(),
-            mbid: mbid,
-            tracks: tracks,
+            mbid: mbid.0,
+            type_of_release: mbid.1,
+            tracks: song_hashmap,
         };
 
-        artist_releases.push(release_data)
+        let title_of_release = format!("{} - {}", release.title.clone(), release_data.type_of_release); 
 
+        releases_hashmap.insert(title_of_release, release_data);
     }
-    let artist_data = ArtistDataWithoutName {
+
+    let artist_data = ArtistData {
         mbid: artist_mbid.as_ref().unwrap().to_string(),
         artist_type: artist_type,
-        releases: artist_releases,
+        releases: releases_hashmap,
     };
 
-//////////////////Convertin the ArtistData to a Json and uploading it to a file/////////////////
+//////////////////Converting the ArtistData to a Json and uploading it to a file////////////////
 
     let mut dict = HashMap::new();
 
@@ -141,8 +126,6 @@ fn main() {
 
     write!(file, "{}", String::from_utf8(ser.into_inner()).unwrap()).unwrap();
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////
 
 //////////////////function to get the artists mbid//////////////////////////////////////////////
 
