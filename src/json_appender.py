@@ -26,7 +26,7 @@ def write_json(new_data, filename='data.json'):
         file.seek(0)
 
         #write the new json to the file
-        json.dump(file_data, file, indent=4)
+        json.dump(file_data, file, indent=4, ensure_ascii=False)
 
 
 with open("temp.json", 'r+', encoding='utf8') as file:
