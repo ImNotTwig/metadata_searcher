@@ -105,6 +105,8 @@ fn main() {
         releases_hashmap.insert(title_of_release, release_data);
     }
 
+//////////////////Creating ArtistData///////////////////////////////////////////////////////////
+
     let artist_data = ArtistData {
         mbid: artist_mbid.as_ref().unwrap().to_string(),
         artist_type: artist_info.artist_type.as_ref().unwrap().to_string(),
